@@ -16,10 +16,23 @@ setTimeout () ->
 				y: 400
 				w: 400
 				h: 20
-			api.stage.add_entity api.entities.make 'Testing.ball',
-				x: 60
+			
+			player = api.entities.make 'Testing.ball',
+				x: 70
 				y: 60
-				radius: 10
+				radius: 20
+
+			api.stage.add_entity player
+
+			# Create control emitter
+			controls = new KDGE.Lib.KeyboardControls
+				'walk.left': 'A'.charCodeAt(0)
+				'walk.right': 68 # 'D'.charCodeAt(0)
+			controls.bind document
+
+			# Instanciate basic player controls with keyboard
+			controller = new KDGE.Game.Controllers.HumanEntityController \
+				controls, player
 	)
 
 , 500

@@ -3,6 +3,7 @@ node_modules/
 
 # Generated sources
 processed/
+public/bundle.js
 
 # Packaged modules
 *.tgz
