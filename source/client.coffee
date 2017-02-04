@@ -8,7 +8,6 @@ setTimeout () ->
 	game = builder.build_client document.getElementById('demo_canvas'), window
 	# -- All sub-engines of the game are now running
 
-	# Engine to update camera position
 	game.install_module 'anonymous', new (class
 		install: (api) ->
 			api.stage.add_entity api.entities.make 'Testing.rectangle',
